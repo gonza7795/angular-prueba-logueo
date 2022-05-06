@@ -11,6 +11,7 @@ import { PrivateComponent } from './components/private/private.component';
 // modules
 
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -18,14 +19,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     AdminComponent,
-    LoginComponent,
+   LoginComponent,
     HomeComponent,
     PrivateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
