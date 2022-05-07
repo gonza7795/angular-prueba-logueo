@@ -11,13 +11,14 @@ import { PrivateComponent } from './components/private/private.component';
 // modules
 
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
 
 //providers
 
 import {JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt'
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 
@@ -36,8 +37,11 @@ import {JwtHelperService, JWT_OPTIONS} from '@auth0/angular-jwt'
     HttpClientModule
   ],
   providers: [
+    //jwt
     {provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
-    JwtHelperService
+    JwtHelperService,
+    //token interceptor
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}
   ],
   bootstrap: [AppComponent]
 })
