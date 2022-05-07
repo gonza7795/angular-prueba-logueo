@@ -1,1 +1,2 @@
 npm i --save @auth0/angular-jwt
+npm i --save jwt-decode
