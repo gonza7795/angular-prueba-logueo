@@ -24,6 +24,9 @@ export class AuthService {
     const token = localStorage.getItem('token');
 
 
+   // este seria el correcto pero da errpor por el (token)
+//if(this.jwtHelper.isTokenExpired(token) || !localStorage.getItem('token')){
+
 
     if( !localStorage.getItem('token')){
       return false;
