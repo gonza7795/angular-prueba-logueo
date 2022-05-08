@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prueba-angular-logueo';
+
+
+  logOut(){
+
+    console.log("borrada la sesion");
+    localStorage.removeItem('token');
+    window.location.href = 'login';
+
+    
+    }
+
+
+
 }
